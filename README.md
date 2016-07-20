@@ -58,8 +58,8 @@ If you want to push yourself and learn something new, optionally consider doing 
 
 * **Wednesday, July 20th by 3:00pm** - Present your app plan to your assigned instructor. Before you begin work on your project, the [planning deliverables](./planning.md) must be checked off with an instructor!
 * **Weekdays, July 21st-25th** - Standups @ 10:00am. Afternoon 1:1s with instructors.
-* **Monday, July 24th** - Feature Freeze! Deploy your code to Heroku, and start polishing existing features. Finalize your README.md and prepare for presentations.
-* **Tuesday, July 25th 12th @ 10am** - Project due and presentations!
+* **Monday, July 25th** - Feature Freeze! Deploy your code to Heroku, and start polishing existing features. Finalize your README.md and prepare for presentations.
+* **Tuesday, July 26th @ 10am** - Project due and presentations!
 
 ## WHAT WE ARE LOOKING FOR
 
