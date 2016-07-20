@@ -93,7 +93,7 @@ We will hold 1:1s throughout the week. We will also do mini lessons on certain t
 
 ## Presentation Tips
 * Please zoom your browser window to 150%.
-* Please set your SublimeText font to at least 20.0 pixels.
+* Please set your Atom font to at least 20.0 pixels.
 * And speak up!
 
 ###HAPPY CODING :)
