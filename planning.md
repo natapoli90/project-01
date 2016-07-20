@@ -116,4 +116,4 @@ Once you have an index page populated with data from the database, you can move 
 
 ## Submission
 
-You must submit all of your planning deliverables in-person to your assigned instructor, *and* get approved, on **Wednesday, April 6th by 3:00pm**. Please create physical (or electronic) documents for each deliverable, and upload them to the <a href="https://trello.com" target="_blank">Trello</a> board you create for your project. For any items done on paper, please take a photo to upload to Trello.
+You must submit all of your planning deliverables in-person to your assigned instructor, *and* get approved, on **Wednesday, July 20th by 3:00pm**. Please create physical (or electronic) documents for each deliverable, and upload them to the <a href="https://trello.com" target="_blank">Trello</a> board you create for your project. For any items done on paper, please take a photo to upload to Trello.
