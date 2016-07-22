@@ -7,55 +7,49 @@ var foodsList =[
               {
                 "name": "Big Mac Burger",
                 "calories": 550,
-                "image": "a",
+                "image": "",
                 "description": "1 burger, Mc Donald's"
               },
               {
                 "name": "All meat Pizza",
                 "calories": 550,
-                "image": "a",
+                "image": "",
                 "description": "2 slices, Papa John's"
               },
               {
                 "name": "French fries",
                 "calories": 510,
-                "image": "a",
+                "image": "",
                 "description": "Large, Mc Donald's"
               },
               {
-                "name": "Strawbery glazed Donut",
+                "name": "Glazed Donut",
                 "calories": 420,
-                "image": "a",
+                "image": "",
                 "description": "1 donut, Dunkin Donuts"
               },
               {
-                "name": "Snikers bar",
-                "calories": 480,
-                "image": "a",
-                "description": "1 Snikers Super bar, 100g"
-              },
-              {
-                "name": "Ice-cream",
+                "name": "Vanilla Ice-cream",
                 "calories": 280,
-                "image": "a",
+                "image": "",
                 "description": "1/2 cup, Ben & Jerry's"
               },
               {
                 "name": "Coca-Cola",
                 "calories": 280,
-                "image": "a",
+                "image": "",
                 "description": "1 Large Soda"
               },
               {
-                "name": "Iced Caramel Macchiato",
+                "name": "Caramel Macchiato",
                 "calories": 550,
-                "image": "a",
+                "image": "",
                 "description": "1 Large, Starbucks"
               },
               {
-                "name": "Beer Sculpin Ipa",
+                "name": "Ipa Beer",
                 "calories": 210,
-                "image": "a",
+                "image": "",
                 "description": "1 bottle, Ballast Point"
               }
 ];
@@ -64,53 +58,46 @@ var foodsList =[
 
 var activitiesList =[
               {
-                "name": "Sexual activity",
-                "MET": 2,
-                "image": "String"
-              },
-              {
                 "name": "Yoga",
                 "MET": 3,
-                "image": "String"
+                "image": ""
               },
               {
-                "name": "Walking (brisk) - 4/mph",
+                "name": "Walking - 4/mph",
                 "MET": 4,
-                "image": "String"
+                "image": ""
               },
               {
                 "name": "Zumba",
                 "MET": 6,
-                "image": "String"
+                "image": ""
               },
               {
-                "name": "Swimming (moderate)",
+                "name": "Swimming",
                 "MET": 7,
-                "image": "String"
+                "image": ""
               },
               {
-                "name": "Weight Training (moderate)",
+                "name": "Weight Training",
                 "MET": 8,
-                "image": "String"
+                "image": ""
               },
               {
-                "name": "Bicycling (moderate) - 13/mph",
+                "name": "Bicycling - 13/mph",
                 "MET": 9,
-                "image": "String"
+                "image": ""
               },
               {
                 "name": "Running - 7/mph",
                 "MET": 11,
-                "image": "String"
+                "image": ""
               },
               {
                 "name": "Boxing",
                 "MET": 12,
-                "image": "String"
+                "image": ""
               }
 ];
-
-
 
 db.Food.remove({}, function(err, food) {
   if (err) {
