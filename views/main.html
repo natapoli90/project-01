@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Train or Gain</title>
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+
+    <!-- VENDOR SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
+    <!-- APPLICATION SCRIPTS -->
+    <script src="/scripts/app.js"></script>
+  </head>
+  <body>
+    <!-- jumbotron -->
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+      <h1 class="display-3">Train or Gain</h1>
+      <p class="lead">This page is the main user page.</p>
+      </div>
+    </div>
+
+
+    <!-- card deck for food -->
+    <div class="foodDB col-xs-12">
+      <h2>Food Database</h2>
+      <div id="foods" class="row">
+        <div class="card-deck-wrapper">
+          <script id="foods-template" type="text/x-handlebars-template">
+          <div class="card-deck">
+            <div class="card col-sm-3 col-xs-12">
+              <div class="card-block">
+                <div class="card ">
+                  <img class="card-img-top" src="{{image}}" alt="Card image cap">
+                  <div class="card-block">
+                    <h4 class="card-title">{{name}}, {{calories}} Cal</h4>
+                    <p class="card-text">{{description}}</p>
+                    <a href="#" class="btn btn-primary">Edit</a>
+                    <a href="#" class="btn btn-primary">Delete</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <!-- card deck for activities -->
+    <div class="activityDB col-xs-12">
+      <h2>Activities Database</h2>
+      <div id="activities" class="row">
+        <div class="card-deck-wrapper">
+          <script id="activities-template" type="text/x-handlebars-template">
+          <div class="card-deck">
+            <div class="card col-sm-3 col-xs-12">
+              <div class="card-block">
+                <div class="card ">
+                  <img class="card-img-top" src="{{image}}" alt="Card image cap">
+                  <div class="card-block">
+                    <h4 class="card-title">{{name}}</h4>
+                    <p class="card-text">Formula</p>
+                    <a href="#" class="btn btn-primary">Edit</a>
+                    <a href="#" class="btn btn-primary">Delete</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
