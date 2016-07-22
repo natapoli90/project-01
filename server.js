@@ -26,10 +26,12 @@ var controllers = require('./controllers');
  * HTML Endpoints
  */
 
-app.get('/', function homepage (req, res) {
+app.get('/admin', function homepage (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
-
+// app.get('/', function homepage (req, res) {
+//   res.sendFile(__dirname + '/views/main.html');
+// });
 
 /*
  * JSON API Endpoints
@@ -39,6 +41,12 @@ app.get('/api', controllers.api.index);
 
 app.get('/api/foods', controllers.foods.index);
 app.get('/api/activities', controllers.activities.index);
+
+app.get('/api/foods/:id', controllers.foods.show);
+app.get('/api/activities/:id', controllers.activities.show);
+
+// app.post('/api/foods', controllers.foods.create);
+// app.post('/api/activities', controllers.activities.create);
 
 /**********
  * SERVER *

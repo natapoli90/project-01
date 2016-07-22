@@ -14,7 +14,11 @@ function create(req, res) {
 
 }
 function show(req, res) {
-
+  db.Food.findById(req.params.id, function(err, foundFood) {
+    if(err) { console.log('foodsController.show error', err); }
+    console.log('foodsController.show responding with', foundFood);
+    res.json(foundFood);
+  });
 }
 
 function destroy(req, res) {
@@ -30,7 +34,7 @@ function update(req, res) {
 module.exports = {
   index: index,
   // create: create,
-  // show: show,
+  show: show,
   // destroy: destroy,
   // update: update
 };
