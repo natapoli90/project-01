@@ -29,9 +29,9 @@ var controllers = require('./controllers');
 app.get('/admin', function homepage (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
-// app.get('/', function homepage (req, res) {
-//   res.sendFile(__dirname + '/views/main.html');
-// });
+app.get('/', function homepage (req, res) {
+  res.sendFile(__dirname + '/views/main.html');
+});
 
 /*
  * JSON API Endpoints
