@@ -1,7 +1,7 @@
 {
-  "name": "tunely",
+  "name": "trainorgain",
   "version": "1.0.0",
-  "description": "An app for tracking your music collection",
+  "description": "An app that gives you ingo about how much time you need to exercise after you ate junk food",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,19 +10,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/tgaff/tunely.git"
+    "url": "git+ssh://git@github.com/natapoli90/project-01.git"
   },
   "author": "tgaff",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tgaff/tunely/issues"
+    "url": "https://github.com/natapoli90/project-01/issues"
   },
-  "homepage": "https://github.com/tgaff/tunely#readme",
+  "homepage": "https://github.com/natapoli90/project-01#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
     "bower": "^1.7.9",
     "express": "^4.14.0",
-    "mongoose": "^4.5.5"
+    "express-session": "^1.14.0",
+    "method-override": "^2.3.6",
+    "mongoose": "^4.5.5",
+    "nodemon": "^1.9.2"
   },
   "directories": {
     "doc": "docs"
