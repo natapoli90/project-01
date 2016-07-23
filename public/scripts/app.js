@@ -46,8 +46,8 @@ $(document).ready(function() {
     $(this).trigger("reset");
   });
 
-
-
+$('#foods').on('click', '.delete-food', handleDeleteFoodClick);
+$('#activities').on('click', '.delete-activity', handleDeleteActivityClick);
 });
 // this function takes a single food and renders it to the page
 function renderFood(food) {
@@ -59,4 +59,45 @@ function renderActivity(activity) {
   console.log('rendering activity', activity);
   var html = activitiesTemplate(activity);
   $('#activities').prepend(html);
+}
+// when a food delete button is clicked
+function handleDeleteFoodClick(e) {
+  console.log("DELETE CALLED");
+  var foodId = $(this).parents('.card-deck').data('foodId');
+  console.log('someone wants to delete food id=' + foodId );
+  $.ajax({
+    method: 'DELETE',
+    url: '/api/foods/' + foodId,
+    success: handleDeleteFoodSuccess
+  });
+}
+
+function handleDeleteFoodSuccess(food) {
+  console.log("ready to delete");
+  var deletedFood = food;
+  console.log('removing the following food from the page:', deletedFood);
+  var divToRemove = 'div[data-food-id=' + deletedFood._id + ']';
+  console.log(divToRemove);
+  $(divToRemove).remove();
+}
+
+// when an activity delete button is clicked
+function handleDeleteActivityClick(e) {
+  console.log("DELETE CALLED");
+  var activityId = $(this).parents('.card-deck').data('activityId');
+  console.log('someone wants to delete activity id=' + activityId );
+  $.ajax({
+    method: 'DELETE',
+    url: '/api/activities/' + activityId,
+    success: handleDeleteActivitySuccess
+  });
+}
+
+function handleDeleteActivitySuccess(activity) {
+  console.log("ready to delete");
+  var deletedActivity = activity;
+  console.log('removing the following activity from the page:', deletedActivity);
+  var divToRemove = 'div[data-activity-id=' + deletedActivity._id + ']';
+  console.log(divToRemove);
+  $(divToRemove).remove();
 }

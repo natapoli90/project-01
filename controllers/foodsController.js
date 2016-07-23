@@ -19,7 +19,7 @@ function create(req, res) {
   });
 }
 function show(req, res) {
-  db.Food.findById(req.params.id, function(err, foundFood) {
+  db.Food.findById(req.params.foodd, function(err, foundFood) {
     if(err) { console.log('foodsController.show error', err); }
     console.log('foodsController.show responding with', foundFood);
     res.json(foundFood);
@@ -27,7 +27,11 @@ function show(req, res) {
 }
 
 function destroy(req, res) {
+  db.Food.findOneAndRemove({_id: req.params.foodId}, function(err, foundFood){
 
+    console.log("DESTROYED Food SUCCESS: " , foundFood);
+    res.json(foundFood);
+  });
 }
 
 function update(req, res) {
@@ -40,6 +44,6 @@ module.exports = {
   index: index,
   create: create,
   show: show,
-  // destroy: destroy,
+  destroy: destroy,
   // update: update
 };

@@ -109,16 +109,16 @@
       <div id="foods" class="row">
         <div class="card-deck-wrapper">
           <script id="foods-template" type="text/x-handlebars-template">
-          <div class="card-deck">
+          <div class="card-deck" data-food-id='{{_id}}'>
             <div class="card col-lg-6 col-md-6 col-sm-6 col-xs-12">
               <div class="card-block">
-                <div class="card ">
+                <div class="card">
                   <img class="card-img-top" src="{{image}}" alt="Card image cap">
                   <div class="card-block">
                     <h4 class="card-title">{{name}}, {{calories}} Cal</h4>
                     <p class="card-text">{{description}}</p>
-                    <a href="#" class="btn btn-primary">Edit</a>
-                    <a href="#" class="btn btn-primary">Delete</a>
+                    <a href="#" class="btn btn-primary edit-food">Edit</a>
+                    <a href="#" class="btn btn-danger delete-food" >Delete</a>
                   </div>
                 </div>
               </div>
@@ -135,7 +135,7 @@
       <div id="activities" class="row">
         <div class="card-deck-wrapper">
           <script id="activities-template" type="text/x-handlebars-template">
-          <div class="card-deck">
+          <div class="card-deck" data-activity-id='{{_id}}'>
             <div class="card col-lg-6 col-md-6 col-sm-6 col-xs-12">
               <div class="card-block">
                 <div class="card ">
@@ -143,8 +143,8 @@
                   <div class="card-block">
                     <h4 class="card-title">{{name}}</h4>
                     <p class="card-text">MET: {{met}}</p>
-                    <a href="#" class="btn btn-primary">Edit</a>
-                    <a href="#" class="btn btn-primary">Delete</a>
+                    <a href="#" class="btn btn-primary edit-activity">Edit</a>
+                    <a href="#" class="btn btn-danger delete-activity">Delete</a>
                   </div>
                 </div>
               </div>

@@ -42,11 +42,14 @@ app.get('/api', controllers.api.index);
 app.get('/api/foods', controllers.foods.index);
 app.get('/api/activities', controllers.activities.index);
 
-app.get('/api/foods/:id', controllers.foods.show);
-app.get('/api/activities/:id', controllers.activities.show);
+app.get('/api/foods/:foodId', controllers.foods.show);
+app.get('/api/activities/:activityId', controllers.activities.show);
 
 app.post('/api/foods', controllers.foods.create);
 app.post('/api/activities', controllers.activities.create);
+
+app.delete('/api/foods/:foodId', controllers.foods.destroy);
+app.delete('/api/activities/:activityId', controllers.activities.destroy);
 
 /**********
  * SERVER *
