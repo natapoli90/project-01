@@ -45,8 +45,8 @@ app.get('/api/activities', controllers.activities.index);
 app.get('/api/foods/:id', controllers.foods.show);
 app.get('/api/activities/:id', controllers.activities.show);
 
-// app.post('/api/foods', controllers.foods.create);
-// app.post('/api/activities', controllers.activities.create);
+app.post('/api/foods', controllers.foods.create);
+app.post('/api/activities', controllers.activities.create);
 
 /**********
  * SERVER *

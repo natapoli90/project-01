@@ -11,7 +11,12 @@ function index(req, res) {
 }
 
 function create(req, res) {
-
+  console.log('body', req.body);
+  db.Activity.create(req.body, function(err, activity) {
+    if (err) { console.log('error', err); }
+    console.log(activity);
+    res.json(activity);
+  });
 }
 function show(req, res) {
   db.Activity.findById(req.params.id, function(err, foundActivity) {
@@ -33,7 +38,7 @@ function update(req, res) {
 // export public methods here
 module.exports = {
   index: index,
-  // create: create,
+  create: create,
   show: show,
   // destroy: destroy,
   // update: update

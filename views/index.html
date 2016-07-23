@@ -26,10 +26,10 @@
       </div>
     </div>
 
-    <div id='food-form' class="container">
+    <div class="container">
           <div class="row col-xs-6">
           <!-- food form -->
-          <div class="ff">
+          <div id='food-form'>
             <form class="form-horizontal">
               <fieldset>
                 <legend>New food entry</legend>
@@ -42,7 +42,7 @@
                 <div class="form-group">
                   <label class="col-md-4 control-label" for="calories">Calories</label>
                   <div class="col-md-4">
-                  <input id="calories" required name="calories" type="text" placeholder="" class="form-control input-md">
+                  <input id="calories" required name="calories" type="number" placeholder="" class="form-control input-md">
                   </div>
                 </div>
                 <div class="form-group">
@@ -61,7 +61,7 @@
                 <div class="form-group">
                   <label class="col-md-4 control-label" for="singlebutton">Save Entry</label>
                   <div class="col-md-4">
-                    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
+                    <button class="add-food" name="singlebutton" class="btn btn-primary">Submit</button>
                   </div>
                 </div>
               </fieldset>
@@ -69,7 +69,7 @@
           </div>
           </div>
                 <!-- activities form -->
-                <div class="af">
+                <div id='activity-form'>
                   <form class="form-horizontal">
                     <fieldset>
                       <legend>New activity entry</legend>
@@ -80,9 +80,9 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="col-md-4 control-label" for="calories">MET</label>
+                        <label class="col-md-4 control-label" for="met">MET</label>
                         <div class="col-md-4">
-                        <input id="met" required name="met" type="text" placeholder="" class="form-control input-md">
+                        <input id="met" required name="met" type="number" placeholder="" class="form-control input-md">
                         </div>
                       </div>
                       <div class="form-group">
@@ -95,7 +95,7 @@
                       <div class="form-group">
                         <label class="col-md-4 control-label" for="singlebutton">Save Entry</label>
                         <div class="col-md-4">
-                          <button id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
+                          <button class="add-activity" name="singlebutton" class="btn btn-primary">Submit</button>
                         </div>
                       </div>
                     </fieldset>
@@ -142,7 +142,7 @@
                   <img class="card-img-top" src="{{image}}" alt="Card image cap">
                   <div class="card-block">
                     <h4 class="card-title">{{name}}</h4>
-                    <p class="card-text">Formula</p>
+                    <p class="card-text">MET: {{met}}</p>
                     <a href="#" class="btn btn-primary">Edit</a>
                     <a href="#" class="btn btn-primary">Delete</a>
                   </div>

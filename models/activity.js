@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 
 var ActivitySchema = new Schema({
   name: String,
-  MET: Number,
+  met: Number,
   image: String,
 });
 

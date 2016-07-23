@@ -11,7 +11,12 @@ function index(req, res) {
 }
 
 function create(req, res) {
-
+  console.log('body', req.body);
+  db.Food.create(req.body, function(err, food) {
+    if (err) { console.log('error', err); }
+    console.log(food);
+    res.json(food);
+  });
 }
 function show(req, res) {
   db.Food.findById(req.params.id, function(err, foundFood) {
@@ -33,7 +38,7 @@ function update(req, res) {
 // export public methods here
 module.exports = {
   index: index,
-  // create: create,
+  create: create,
   show: show,
   // destroy: destroy,
   // update: update

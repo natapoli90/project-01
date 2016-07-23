@@ -59,42 +59,42 @@ var foodsList =[
 var activitiesList =[
               {
                 "name": "Yoga",
-                "MET": 3,
+                "met": 3,
                 "image": ""
               },
               {
                 "name": "Walking - 4/mph",
-                "MET": 4,
+                "met": 4,
                 "image": ""
               },
               {
                 "name": "Zumba",
-                "MET": 6,
+                "met": 6,
                 "image": ""
               },
               {
                 "name": "Swimming",
-                "MET": 7,
+                "met": 7,
                 "image": ""
               },
               {
                 "name": "Weight Training",
-                "MET": 8,
+                "met": 8,
                 "image": ""
               },
               {
                 "name": "Bicycling - 13/mph",
-                "MET": 9,
+                "met": 9,
                 "image": ""
               },
               {
                 "name": "Running - 7/mph",
-                "MET": 11,
+                "met": 11,
                 "image": ""
               },
               {
                 "name": "Boxing",
-                "MET": 12,
+                "met": 12,
                 "image": ""
               }
 ];
