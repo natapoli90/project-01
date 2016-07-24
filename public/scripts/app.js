@@ -48,7 +48,15 @@ $(document).ready(function() {
 
 $('#foods').on('click', '.delete-food', handleDeleteFoodClick);
 $('#activities').on('click', '.delete-activity', handleDeleteActivityClick);
+
+$('#foods').on('click', '.edit-food', handleFoodEditClick);
+$('#foods').on('click', '.save-food', handleFoodSaveChangesClick);
+
+$('#activities').on('click', '.edit-activity', handleActivityEditClick);
+$('#activities').on('click', '.save-activity', handleActivitySaveChangesClick);
 });
+
+
 // this function takes a single food and renders it to the page
 function renderFood(food) {
   console.log('rendering food', food);
@@ -100,4 +108,106 @@ function handleDeleteActivitySuccess(activity) {
   var divToRemove = 'div[data-activity-id=' + deletedActivity._id + ']';
   console.log(divToRemove);
   $(divToRemove).remove();
+}
+
+// when the edit button for food is clicked
+function handleFoodEditClick(e) {
+  var $foodRow = $(this).closest('.card-deck');
+  var foodId = $foodRow.data('food-id');
+  console.log('edit food', foodId);
+
+  // show the save changes button
+  $foodRow.find('.save-food').toggleClass('hidden');
+  // hide the edit button
+  $foodRow.find('.edit-food').toggleClass('hidden');
+
+
+  var foodName = $foodRow.find('h4.food-name').text();
+  $foodRow.find('h4.food-name').html('<input class="edit-food-name" value="' + foodName + '"></input>');
+
+
+  var foodCalories = $foodRow.find('h2.food-calories').text();
+  $foodRow.find('h2.food-calories').html('<input class="edit-food-calories" value="' + foodCalories + '"></input>');
+
+
+  var foodDescription = $foodRow.find('p.food-description').text();
+  $foodRow.find('p.food-description').html('<input class="edit-food-description" value="' + foodDescription + '"></input>');
+}
+
+// after editing food, when the save changes button is clicked
+function handleFoodSaveChangesClick(e) {
+  var foodId = $(this).parents('.card-deck').data('food-id');
+  var $foodRow = $('[data-food-id=' + foodId + ']');
+
+  var data = {
+    name: $foodRow.find('.edit-food-name').val(),
+    calories: $foodRow.find('.edit-food-calories').val(),
+    description: $foodRow.find('.edit-food-description').val()
+  };
+  console.log('PUTing data for food', foodId, 'with data', data);
+  $.ajax({
+    method: 'PUT',
+    url: '/api/foods/' + foodId,
+    data: data,
+    success: handleFoodUpdatedResponse
+  });
+  function handleFoodUpdatedResponse(data) {
+    console.log('response to update', data);
+
+    var foodId = data._id;
+
+    $('[data-food-id=' + foodId + ']').remove();
+
+    renderFood(data);
+
+
+    $('[data-food-id=' + foodId + ']')[0].scrollIntoView();
+  }
+}
+
+
+// when the edit button for activity is clicked
+function handleActivityEditClick(e) {
+  var $activityRow = $(this).closest('.card-deck');
+  var activityId = $activityRow.data('activity-id');
+  console.log('edit activity', activityId);
+
+  // show the save changes button
+  $activityRow.find('.save-activity').toggleClass('hidden');
+  // hide the edit button
+  $activityRow.find('.edit-activity').toggleClass('hidden');
+
+
+  var activityName = $activityRow.find('h4.activity-name').text();
+  $activityRow.find('h4.activity-name').html('<input class="edit-activity-name" value="' + activityName + '"></input>');
+console.log(activityName);
+
+  var activityMet = $activityRow.find('h2.activity-met').text();
+  $activityRow.find('h2.activity-met').html('<input class="edit-activity-met" value="' + activityMet + '"></input>');
+console.log(activityMet);
+}
+
+// after editing activity, when the save changes button is clicked
+function handleActivitySaveChangesClick(e) {
+  var activityId = $(this).parents('.card-deck').data('activity-id');
+  var $activityRow = $('[data-activity-id=' + activityId + ']');
+
+  var data = {
+    name: $activityRow.find('.edit-activity-name').val(),
+    met: $activityRow.find('.edit-activity-met').val(),
+  };
+  console.log('PUTing data for activity', activityId, 'with data', data);
+  $.ajax({
+    method: 'PUT',
+    url: '/api/activities/' + activityId,
+    data: data,
+    success: handleActivityUpdatedResponse
+  });
+  function handleActivityUpdatedResponse(data) {
+    console.log('response to update', data);
+    var activityId = data._id;
+    $('[data-activity-id=' + activityId + ']').remove();
+    renderActivity(data);
+    $('[data-activity-id=' + activityId + ']')[0].scrollIntoView();
+  }
 }

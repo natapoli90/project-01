@@ -19,7 +19,7 @@ function create(req, res) {
   });
 }
 function show(req, res) {
-  db.Food.findById(req.params.foodd, function(err, foundFood) {
+  db.Food.findById(req.params.foodId, function(err, foundFood) {
     if(err) { console.log('foodsController.show error', err); }
     console.log('foodsController.show responding with', foundFood);
     res.json(foundFood);
@@ -35,7 +35,18 @@ function destroy(req, res) {
 }
 
 function update(req, res) {
-
+  console.log('updating with data', req.body);
+db.Food.findById(req.params.foodId, function(err, foundFood) {
+  if(err) { console.log('foodsController.update error', err); }
+  foundFood.name = req.body.name;
+  foundFood.calories = req.body.calories;
+  // foundFood.image = req.body.image;
+  foundFood.description = req.body.description;
+  foundFood.save(function(err, food) {
+    if(err) { console.log('saving altered food failed'); }
+    res.json(foundFood);
+  });
+});
 }
 
 
@@ -45,5 +56,5 @@ module.exports = {
   create: create,
   show: show,
   destroy: destroy,
-  // update: update
+  update: update
 };

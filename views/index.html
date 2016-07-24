@@ -52,9 +52,9 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-md-4 control-label" for="description">Short description</label>
+                  <label class="col-md-4 control-label" for="description">Description</label>
                   <div class="col-md-4">
-                    <textarea class="form-control" id="description" name="description"></textarea>
+                    <input id="description" name="description"></input>
                   </div>
                 </div>
                 <!-- Button -->
@@ -115,9 +115,11 @@
                 <div class="card">
                   <img class="card-img-top" src="{{image}}" alt="Card image cap">
                   <div class="card-block">
-                    <h4 class="card-title">{{name}}, {{calories}} Cal</h4>
-                    <p class="card-text">{{description}}</p>
-                    <a href="#" class="btn btn-primary edit-food">Edit</a>
+                    <h4 class="food-name">{{name}}</h4>Cal:
+                    <h2 class="food-calories">{{calories}}</h2>
+                    <p class="food-description">{{description}}</p>
+                    <a href="#" class="btn btn-info edit-food">Edit</a>
+                    <a href="#" class="btn btn-success save-food hidden">Save</a>
                     <a href="#" class="btn btn-danger delete-food" >Delete</a>
                   </div>
                 </div>
@@ -141,9 +143,10 @@
                 <div class="card ">
                   <img class="card-img-top" src="{{image}}" alt="Card image cap">
                   <div class="card-block">
-                    <h4 class="card-title">{{name}}</h4>
-                    <p class="card-text">MET: {{met}}</p>
-                    <a href="#" class="btn btn-primary edit-activity">Edit</a>
+                    <h4 class="activity-name">{{name}}</h4>MET:
+                    <h2 class="activity-met">{{met}}</h2>
+                    <a href="#" class="btn btn-info edit-activity">Edit</a>
+                    <a href="#" class="btn btn-success save-activity hidden">Save</a>
                     <a href="#" class="btn btn-danger delete-activity">Delete</a>
                   </div>
                 </div>

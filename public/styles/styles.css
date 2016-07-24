@@ -1,12 +1,14 @@
-img {
-    width:100%;
+.jumbotron {
+  /*background-image: url(/images/    .jpg);*/
+  background-size: cover;
+  background-repeat: no-repeat;
+
 }
-.container {
-    max-width:100%;
-    width: 100%;
+.jumbotron .container {
+  height: 350px;
 }
-.col-md-3{
-    width:100%;
-    float:left;
-    margin:0;
-}
+
+
+.hidden {
+   display: none;
+ }

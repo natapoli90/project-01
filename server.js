@@ -51,6 +51,8 @@ app.post('/api/activities', controllers.activities.create);
 app.delete('/api/foods/:foodId', controllers.foods.destroy);
 app.delete('/api/activities/:activityId', controllers.activities.destroy);
 
+app.put('/api/foods/:foodId', controllers.foods.update);
+app.put('/api/activities/:activityId', controllers.activities.update);
 /**********
  * SERVER *
  **********/
