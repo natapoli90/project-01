@@ -2,6 +2,8 @@
 */
   var foodsTemplate;
   var activitiesTemplate;
+  var weight;
+  var food;
 
 $(document).ready(function() {
 
@@ -21,11 +23,11 @@ $('.start-over').hide();
       renderFood(food);
     });
   });
-  $.get('/api/activities').success(function (activities) {
-    activities.forEach(function(activity) {
-      renderActivity(activity);
-    });
-  });
+  // $.get('/api/activities').success(function (activities) {
+  //   activities.forEach(function(activity) {
+  //     renderActivity(activity);
+  //   });
+  // });
 
   $('.start-button').on('click', function(e) {
         $('.weight').show();
@@ -46,15 +48,30 @@ function startOver (e) {
   $('.start-over').hide();
 }
 
+$.get('/api/foods').success(function (foods) {
+  foods.forEach(function(food) {
+    renderFood(food);
+  });
+});
 
-function showAll (e) {
+function onClickFood (calories) {
   $('.foodDB').hide();
   $('.activityDB').show();
   $('.start-over').show();
+  weight = $('#weight').val();
+  console.log("Weight: ", weight);
+  console.log("Food calories: ", calories);
+  $.get('/api/activities').success(function (activities) {
+    activities.forEach(function calcMin(activity) {
+      console.log("MET: ", activity.met);
+      activity.time = calories / (activity.met*(weight/2));
+      renderActivity(activity);
+    });
+  });
+}
 
-  var weight = ($('#weight')/2);
-  var time = foodsList.calories / (activitiesList.met * weight);
-  $('.card-block').appendText(time + " min");
+function calculateTime(met, calories, weight) {
+
 }
 
 function playSound () {
@@ -69,5 +86,6 @@ function renderFood(food) {
 function renderActivity(activity) {
   console.log('rendering activity', activity);
   var html = activitiesTemplate(activity);
+  console.log("Activity html: ", html);
   $('#activities').prepend(html);
 }

@@ -7,7 +7,7 @@
     <title>Train or Gain</title>
 
     <!-- STYLESHEETS -->
-    <link href='http://fonts.googleapis.com/css?family=Rancho&effect=fire-animation' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Rancho&effect=fire-animation' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="/styles/mainStyles.css">
 
@@ -61,7 +61,7 @@
           <div class="card-deck" data-food-id='{{_id}}'>
             <div class="card col-md-3 col-sm-6 col-xs-12">
               <div class="card-block">
-                <div class="card" onclick="showAll()">
+                <div class="card" onclick="onClickFood({{calories}})">
                   <img class="card-img-top img-responsive img-circle grow" src="{{image}}" alt="Card image cap">
                   <div class="card-block">
                     <h4 class="food-name font-effect-fire-animation">{{name}}</h4>
@@ -89,7 +89,7 @@
                   <img class="card-img-top img-responsive img-circle grow" src="{{image}}" alt="Card image cap">
                   <div class="card-block">
                     <h4 class="activity-name font-effect-fire-animation">{{name}}</h4>
-                    <p class="font-effect-fire-animation">MET: </p><p class="activity-met font-effect-fire-animation">{{met}}</p>
+                    <p class="time font-effect-fire-animation">Time:</p><p class="activity-met font-effect-fire-animation">{{time}}</p>
                   </div>
                 </div>
               </div>
