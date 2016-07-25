@@ -51,12 +51,6 @@
                   <input id="image" required name="image" type="url" placeholder="" class="form-control input-md">
                   </div>
                 </div>
-                <div class="form-group">
-                  <label class="col-md-4 control-label" for="description">Description</label>
-                  <div class="col-md-4">
-                    <input id="description" name="description"></input>
-                  </div>
-                </div>
                 <!-- Button -->
                 <div class="form-group">
                   <label class="col-md-4 control-label" for="singlebutton">Save Entry</label>
@@ -103,21 +97,23 @@
                 </div>
         </div>
       <hr>
+
+
+      
     <!-- card deck for food -->
-    <div class="foodDB col-lg-6 col-md-6 col-xs-6">
-      <h2>Food Database</h2>
+    <div class="foodDB col-xs-6">
+      <h2>Food DB</h2>
       <div id="foods" class="row">
         <div class="card-deck-wrapper">
           <script id="foods-template" type="text/x-handlebars-template">
           <div class="card-deck" data-food-id='{{_id}}'>
-            <div class="card col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="card col-md-3 col-sm-6 col-xs-12">
               <div class="card-block">
                 <div class="card">
-                  <img class="card-img-top" src="{{image}}" alt="Card image cap">
+                  <img class="card-img-top img-responsive img-circle" src="{{image}}" alt="Card image cap">
                   <div class="card-block">
-                    <h4 class="food-name">{{name}}</h4>Cal:
-                    <h2 class="food-calories">{{calories}}</h2>
-                    <p class="food-description">{{description}}</p>
+                    <h4 class="food-name">{{name}}</h4>
+                    <p>Calories: </p><p class="food-calories">{{calories}}</p>
                     <a href="#" class="btn btn-info edit-food">Edit</a>
                     <a href="#" class="btn btn-success save-food hidden">Save</a>
                     <a href="#" class="btn btn-danger delete-food" >Delete</a>
@@ -132,19 +128,19 @@
     </div>
 
     <!-- card deck for activities -->
-    <div class="activityDB col-lg-6 col-md-6 col-xs-6">
-      <h2>Activities Database</h2>
+    <div class="activityDB col-xs-6">
+      <h2>Activities DB</h2>
       <div id="activities" class="row">
         <div class="card-deck-wrapper">
           <script id="activities-template" type="text/x-handlebars-template">
           <div class="card-deck" data-activity-id='{{_id}}'>
-            <div class="card col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="card col-md-3 col-sm-6 col-xs-12">
               <div class="card-block">
                 <div class="card ">
-                  <img class="card-img-top" src="{{image}}" alt="Card image cap">
+                  <img class="card-img-top img-responsive img-circle" src="{{image}}" alt="Card image cap">
                   <div class="card-block">
-                    <h4 class="activity-name">{{name}}</h4>MET:
-                    <h2 class="activity-met">{{met}}</h2>
+                    <h4 class="activity-name">{{name}}</h4>
+                    <p>MET: </p><p class="activity-met">{{met}}</p>
                     <a href="#" class="btn btn-info edit-activity">Edit</a>
                     <a href="#" class="btn btn-success save-activity hidden">Save</a>
                     <a href="#" class="btn btn-danger delete-activity">Delete</a>

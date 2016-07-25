@@ -1,0 +1,65 @@
+body {
+   background-image: url("/images/stars.gif");
+
+}
+
+.jumbotron {
+  background-image: url(/images/main.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width:100%;
+height: 610px;
+  display: block;
+  margin: 0 auto;
+
+}
+
+.hidden {
+   display: none;
+ }
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+#foods, #activities {
+    border-radius: 25px;
+    border: 1px solid black;
+    margin: 20px;
+}
+.card {
+  padding: 5px 15px;
+  display: block;
+  margin: auto;
+}
+.foodDB, .activityDB, .lead, .hi, .start-over, .name, .train {
+  text-align: center;
+}
+.container, .train {
+  font-family: Rancho;
+  font-size: 100px;
+  margin: 40px 0;
+  text-align: center;
+}
+
+.start-button, .start-over, .card-img-top {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.grow:hover
+{
+        -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.3);
+}
+.gain {
+  font-family: Rancho;
+  font-size: 60px;
+  margin: 40px 0;
+  text-align: center;
+}

@@ -7,41 +7,65 @@
     <title>Train or Gain</title>
 
     <!-- STYLESHEETS -->
+    <link href='http://fonts.googleapis.com/css?family=Rancho&effect=fire-animation' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/mainStyles.css">
 
     <!-- VENDOR SCRIPTS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
     <!-- APPLICATION SCRIPTS -->
-    <script src="/scripts/app.js"></script>
+    <script src="/scripts/mainApp.js"></script>
   </head>
   <body>
+
     <!-- jumbotron -->
+
+
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
-      <h1 class="display-3">Train or Gain</h1>
-      <p class="lead">This page is the main user page.</p>
+         <h0 class="name font-effect-fire-animation text-center">TRAIN or GAIN</h0>
+
+
+      <div class="font-effect-fire-animation">
+        <h1 class="start start-button" onclick="playSound()" >START</h1>
       </div>
     </div>
+    <footer class="page-row">
+      <h3 class="hi font-effect-fire-animation">Please make sure your SOUND is ON!</h3>
+    </footer>
+</div>
+  <audio class="hidden" id="my_audio" controls preload="none">
+      <source src="/audio/welcome7.mp3" type="audio/mpeg">
+  </audio>
+
+<h1 class="name weight train font-effect-fire-animation">TRAIN or GAIN</h1>
+<div class="weight col-xs-12 col-sm-offset-4">
+  <div class="">
+    <label class="col-xs-1 control-label font-effect-fire-animation" for="met">Weight:</label>
+    <div class="col-xs-2">
+    <input id="weight" required  name="weight" type="number" placeholder="Your weight in lbs" class="form-control input-md" >
+
+    </div>
+  </div>
+</div>
+
 
     <!-- card deck for food -->
     <div class="foodDB col-xs-12">
-      <h2>Food Database</h2>
+      <h1 class="gain font-effect-fire-animation">FOOD</h1>
       <div id="foods" class="row">
         <div class="card-deck-wrapper">
           <script id="foods-template" type="text/x-handlebars-template">
-          <div class="card-deck">
-            <div class="card col-sm-3 col-xs-12">
+          <div class="card-deck" data-food-id='{{_id}}'>
+            <div class="card col-md-3 col-sm-6 col-xs-12">
               <div class="card-block">
-                <div class="card ">
-                  <img class="card-img-top" src="{{image}}" alt="Card image cap">
+                <div class="card" onclick="showAll()">
+                  <img class="card-img-top img-responsive img-circle grow" src="{{image}}" alt="Card image cap">
                   <div class="card-block">
-                    <h4 class="card-title">{{name}}, {{calories}} Cal</h4>
-                    <p class="card-text">{{description}}</p>
-                    <a href="#" class="btn btn-primary">Edit</a>
-                    <a href="#" class="btn btn-primary">Delete</a>
+                    <h4 class="food-name font-effect-fire-animation">{{name}}</h4>
+                    <p class="font-effect-fire-animation">Calories: </p><p class="food-calories font-effect-fire-animation">{{calories}}</p>
                   </div>
                 </div>
               </div>
@@ -54,20 +78,18 @@
 
     <!-- card deck for activities -->
     <div class="activityDB col-xs-12">
-      <h2>Activities Database</h2>
+      <h1 class="gain font-effect-fire-animation">ACTIVITIES</h1>
       <div id="activities" class="row">
         <div class="card-deck-wrapper">
           <script id="activities-template" type="text/x-handlebars-template">
-          <div class="card-deck">
-            <div class="card col-sm-3 col-xs-12">
+          <div class="card-deck" data-activity-id='{{_id}}'>
+            <div class="card col-md-3 col-sm-6 col-xs-12">
               <div class="card-block">
                 <div class="card ">
-                  <img class="card-img-top" src="{{image}}" alt="Card image cap">
+                  <img class="card-img-top img-responsive img-circle grow" src="{{image}}" alt="Card image cap">
                   <div class="card-block">
-                    <h4 class="card-title">{{name}}</h4>
-                    <p class="card-text">MET: {{met}}</p>
-                    <a href="#" class="btn btn-primary">Edit</a>
-                    <a href="#" class="btn btn-primary">Delete</a>
+                    <h4 class="activity-name font-effect-fire-animation">{{name}}</h4>
+                    <p class="font-effect-fire-animation">MET: </p><p class="activity-met font-effect-fire-animation">{{met}}</p>
                   </div>
                 </div>
               </div>
@@ -77,5 +99,14 @@
         </div>
       </div>
     </div>
+
+    <div class="start-over font-effect-fire-animation">
+      <h1 class="start" onclick="startOver()" >START OVER</h1>
+    </div>
+
+
+
+
+
   </body>
 </html>

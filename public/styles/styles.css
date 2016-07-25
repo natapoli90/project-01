@@ -5,10 +5,30 @@
 
 }
 .jumbotron .container {
-  height: 350px;
+  height: 100px;
 }
-
 
 .hidden {
    display: none;
  }
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+#foods, #activities {
+    border-radius: 25px;
+    border: 1px solid black;
+    margin: 20px;
+}
+.card {
+  padding: 5px 15px;
+  display: block;
+  margin: auto;
+}
+.foodDB, .activityDB, .display-3, .lead, legend {
+  text-align: center;
+}

@@ -126,12 +126,9 @@ function handleFoodEditClick(e) {
   $foodRow.find('h4.food-name').html('<input class="edit-food-name" value="' + foodName + '"></input>');
 
 
-  var foodCalories = $foodRow.find('h2.food-calories').text();
-  $foodRow.find('h2.food-calories').html('<input class="edit-food-calories" value="' + foodCalories + '"></input>');
+  var foodCalories = $foodRow.find('p.food-calories').text();
+  $foodRow.find('p.food-calories').html('<input class="edit-food-calories" value="' + foodCalories + '"></input>');
 
-
-  var foodDescription = $foodRow.find('p.food-description').text();
-  $foodRow.find('p.food-description').html('<input class="edit-food-description" value="' + foodDescription + '"></input>');
 }
 
 // after editing food, when the save changes button is clicked
@@ -142,7 +139,6 @@ function handleFoodSaveChangesClick(e) {
   var data = {
     name: $foodRow.find('.edit-food-name').val(),
     calories: $foodRow.find('.edit-food-calories').val(),
-    description: $foodRow.find('.edit-food-description').val()
   };
   console.log('PUTing data for food', foodId, 'with data', data);
   $.ajax({
@@ -182,8 +178,8 @@ function handleActivityEditClick(e) {
   $activityRow.find('h4.activity-name').html('<input class="edit-activity-name" value="' + activityName + '"></input>');
 console.log(activityName);
 
-  var activityMet = $activityRow.find('h2.activity-met').text();
-  $activityRow.find('h2.activity-met').html('<input class="edit-activity-met" value="' + activityMet + '"></input>');
+  var activityMet = $activityRow.find('p.activity-met').text();
+  $activityRow.find('p.activity-met').html('<input class="edit-activity-met" value="' + activityMet + '"></input>');
 console.log(activityMet);
 }
 

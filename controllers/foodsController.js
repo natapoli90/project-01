@@ -41,7 +41,6 @@ db.Food.findById(req.params.foodId, function(err, foundFood) {
   foundFood.name = req.body.name;
   foundFood.calories = req.body.calories;
   // foundFood.image = req.body.image;
-  foundFood.description = req.body.description;
   foundFood.save(function(err, food) {
     if(err) { console.log('saving altered food failed'); }
     res.json(foundFood);

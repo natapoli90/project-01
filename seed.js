@@ -5,52 +5,44 @@ var db = require("./models");
 
 var foodsList =[
               {
-                "name": "Big Mac Burger",
+                "name": "Burger",
                 "calories": 550,
-                "image": "",
-                "description": "1 burger, Mc Donald's"
+                "image": "/images/food/1burger.jpg",
               },
               {
-                "name": "All meat Pizza",
-                "calories": 550,
-                "image": "",
-                "description": "2 slices, Papa John's"
+                "name": "Pizza, 1 slice",
+                "calories": 230,
+                "image": "/images/food/2pizza.jpg"
               },
               {
                 "name": "French fries",
                 "calories": 510,
-                "image": "",
-                "description": "Large, Mc Donald's"
+                "image": "/images/food/3fries.jpg"
               },
               {
                 "name": "Glazed Donut",
                 "calories": 420,
-                "image": "",
-                "description": "1 donut, Dunkin Donuts"
+                "image": "/images/food/4donut.jpg"
               },
               {
-                "name": "Vanilla Ice-cream",
+                "name": "Ice-cream",
                 "calories": 280,
-                "image": "",
-                "description": "1/2 cup, Ben & Jerry's"
+                "image": "/images/food/5ice-cream.jpg"
               },
               {
                 "name": "Coca-Cola",
                 "calories": 280,
-                "image": "",
-                "description": "1 Large Soda"
+                "image": "/images/food/6coca-cola.jpg"
               },
               {
-                "name": "Caramel Macchiato",
+                "name": "Iced coffee",
                 "calories": 550,
-                "image": "",
-                "description": "1 Large, Starbucks"
+                "image": "/images/food/7coffee.jpg"
               },
               {
-                "name": "Ipa Beer",
+                "name": "Beer",
                 "calories": 210,
-                "image": "",
-                "description": "1 bottle, Ballast Point"
+                "image": "/images/food/8beer.jpg"
               }
 ];
 
@@ -60,42 +52,42 @@ var activitiesList =[
               {
                 "name": "Yoga",
                 "met": 3,
-                "image": ""
+                "image": "/images/activity/1yoga.jpg"
               },
               {
-                "name": "Walking - 4/mph",
+                "name": "Jogging",
                 "met": 4,
-                "image": ""
+                "image": "/images/activity/2walk.jpg"
               },
               {
                 "name": "Zumba",
                 "met": 6,
-                "image": ""
+                "image": "/images/activity/3zumba.png"
               },
               {
                 "name": "Swimming",
                 "met": 7,
-                "image": ""
+                "image": "/images/activity/4swim.jpg"
               },
               {
-                "name": "Weight Training",
+                "name": "Gym",
                 "met": 8,
-                "image": ""
+                "image": "/images/activity/5gym.jpeg"
               },
               {
-                "name": "Bicycling - 13/mph",
+                "name": "Bicycling",
                 "met": 9,
-                "image": ""
+                "image": "/images/activity/6cycling.jpg"
               },
               {
-                "name": "Running - 7/mph",
+                "name": "Running",
                 "met": 11,
-                "image": ""
+                "image": "/images/activity/7run.jpg"
               },
               {
                 "name": "Boxing",
                 "met": 12,
-                "image": ""
+                "image": "/images/activity/8box.jpg"
               }
 ];
 
