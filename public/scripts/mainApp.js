@@ -11,6 +11,7 @@ $('.weight').hide();
 $('.foodDB').hide();
 $('.activityDB').hide();
 $('.start-over').hide();
+$('h1.start').hide();
 
   console.log('app.js loaded!');
   var foodHtml = $('#foods-template').html();
@@ -23,36 +24,19 @@ $('.start-over').hide();
       renderFood(food);
     });
   });
-  // $.get('/api/activities').success(function (activities) {
-  //   activities.forEach(function(activity) {
-  //     renderActivity(activity);
-  //   });
-  // });
 
   $('.start-button').on('click', function(e) {
         $('.weight').show();
         $('.jumbotron').hide();
         $('.foodDB').show();
-
 });
-
-
-
-
-
-
 });
 function startOver (e) {
+  $('#activities').html("");
   $('.foodDB').show();
   $('.activityDB').hide();
   $('.start-over').hide();
 }
-
-$.get('/api/foods').success(function (foods) {
-  foods.forEach(function(food) {
-    renderFood(food);
-  });
-});
 
 function onClickFood (calories) {
   $('.foodDB').hide();
@@ -62,21 +46,33 @@ function onClickFood (calories) {
   console.log("Weight: ", weight);
   console.log("Food calories: ", calories);
   $.get('/api/activities').success(function (activities) {
-    activities.forEach(function calcMin(activity) {
+    activities.forEach(function calculateTime (activity, met) {
       console.log("MET: ", activity.met);
-      activity.time = calories / (activity.met*(weight/2));
-      renderActivity(activity);
+      console.log("Weight before parse: ", weight);
+      console.log("Weight:", weight);
+      var weightKg = (weight / 2.205);
+      console.log("WeightKG: ", weightKg);
+      var metKg = (activity.met * weightKg);
+      console.log("MetKg: ", metKg);
+      activity.time = Math.round(((calories / metKg)/0.01));
+      console.log("Activity.time: ", activity.time);
+renderActivity(activity);
+
     });
+
   });
-}
-
-function calculateTime(met, calories, weight) {
 
 }
 
-function playSound () {
-    document.getElementById('my_audio').play();
+function playSound1 () {
+    document.getElementById('audio1').play();
+  $('h1.ok').hide();
+  $('h1.start').show();
 }
+function playSound2 () {
+    document.getElementById('audio2').play();
+  }
+
 // this function takes a single food and renders it to the page
 function renderFood(food) {
   console.log('rendering food', food);

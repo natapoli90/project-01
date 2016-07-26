@@ -19,25 +19,23 @@
     <script src="/scripts/mainApp.js"></script>
   </head>
   <body>
-
     <!-- jumbotron -->
-
-
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
          <h0 class="name font-effect-fire-animation text-center">TRAIN or GAIN</h0>
-
-
-      <div class="font-effect-fire-animation">
-        <h1 class="start start-button" onclick="playSound()" >START</h1>
+         <h2 class="hi font-effect-fire-animation">PLEASE MAKE SURE YOUR SOUND IS ON!</h2>
+      <div class="start font-effect-fire-animation">
+        <h1 class="ok grow" onclick="playSound1()">OK</h1>
+        <h1 class="start start-button grow" onclick="playSound2()" >START</h1>
       </div>
     </div>
-    <footer class="page-row">
-      <h3 class="hi font-effect-fire-animation">Please make sure your SOUND is ON!</h3>
-    </footer>
 </div>
-  <audio class="hidden" id="my_audio" controls preload="none">
-      <source src="/audio/welcome7.mp3" type="audio/mpeg">
+
+  <audio class="hidden" id="audio1" controls preload="none">
+      <source src="/audio/welcome1.mp3" type="audio/mpeg">
+  </audio>
+  <audio class="hidden" id="audio2" controls preload="none">
+      <source src="/audio/welcome2.mp3" type="audio/mpeg">
   </audio>
 
 <h1 class="name weight train font-effect-fire-animation">TRAIN or GAIN</h1>
@@ -46,12 +44,9 @@
     <label class="col-xs-1 control-label font-effect-fire-animation" for="met">Weight:</label>
     <div class="col-xs-2">
     <input id="weight" required  name="weight" type="number" placeholder="Your weight in lbs" class="form-control input-md" >
-
     </div>
   </div>
 </div>
-
-
     <!-- card deck for food -->
     <div class="foodDB col-xs-12">
       <h1 class="gain font-effect-fire-animation">FOOD</h1>
@@ -89,7 +84,7 @@
                   <img class="card-img-top img-responsive img-circle grow" src="{{image}}" alt="Card image cap">
                   <div class="card-block">
                     <h4 class="activity-name font-effect-fire-animation">{{name}}</h4>
-                    <p class="time font-effect-fire-animation">Time:</p><p class="activity-met font-effect-fire-animation">{{time}}</p>
+                    <p class="time font-effect-fire-animation">Time:</p><p class="activity-met font-effect-fire-animation">{{time}} minutes</p>
                   </div>
                 </div>
               </div>
@@ -99,14 +94,8 @@
         </div>
       </div>
     </div>
-
     <div class="start-over font-effect-fire-animation">
       <h1 class="start" onclick="startOver()" >START OVER</h1>
     </div>
-
-
-
-
-
   </body>
 </html>

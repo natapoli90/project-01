@@ -36,7 +36,7 @@ var foodsList =[
               },
               {
                 "name": "Iced coffee",
-                "calories": 550,
+                "calories": 350,
                 "image": "/images/food/7coffee.jpg"
               },
               {
