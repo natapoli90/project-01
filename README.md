@@ -40,3 +40,7 @@ DEVELOPING TOOLS
 * Log in feature for the admin(needs to be secured from other users).
 * Comments feedback from users.
 * Connect FatSecret external API to get access to a great database of food and exercises.
+
+## Screenshot (main page)
+
+[public/images/screenshot.png]
