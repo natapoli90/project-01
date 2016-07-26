@@ -43,25 +43,14 @@ function onClickFood (calories) {
   $('.activityDB').show();
   $('.start-over').show();
   weight = $('#weight').val();
-  console.log("Weight: ", weight);
-  console.log("Food calories: ", calories);
   $.get('/api/activities').success(function (activities) {
     activities.forEach(function calculateTime (activity, met) {
-      console.log("MET: ", activity.met);
-      console.log("Weight before parse: ", weight);
-      console.log("Weight:", weight);
       var weightKg = (weight / 2.205);
-      console.log("WeightKG: ", weightKg);
       var metKg = (activity.met * weightKg);
-      console.log("MetKg: ", metKg);
       activity.time = Math.round(((calories / metKg)/0.01));
-      console.log("Activity.time: ", activity.time);
-renderActivity(activity);
-
+      renderActivity(activity);
     });
-
   });
-
 }
 
 function playSound1 () {
