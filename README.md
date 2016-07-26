@@ -31,12 +31,12 @@ DEVELOPING TOOLS
 
 * Food database*
 * Activities database*
-* Jquery Math calculations that will take user's input(weight), calories for chosen food and MET data for activity and will return workout time for each activity.*
-* Beautifully styles main user page with artificial intelligence feature. This application literally talk to you when you press start. Don't forget to turn on sound!*
+* Jquery Math calculations that will take user's input(weight), calories for chosen food and MET data for activity and will return workout time for each activity.
+* Beautifully styles main user page with artificial intelligence feature. This application literally talk to you when you press start. Don't forget to turn on sound!
 * Perfectly arranged admin page with all the CRUD abilities: add, edit and delete databases in one click!
 
 ## Planned Features
 
-* Log in feature for the admin(needs to be secured from other users).*
-* Comments feedback from users.*
-* Connect
+* Log in feature for the admin(needs to be secured from other users).
+* Comments feedback from users.
+* Connect FatSecret external API to get access to a great database of food and exercises.
