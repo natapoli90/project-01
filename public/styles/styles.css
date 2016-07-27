@@ -32,3 +32,15 @@
 .foodDB, .activityDB, .display-3, .lead, legend {
   text-align: center;
 }
+.glyphicon-plus, .glyphicon-ok {
+  color: green;
+  background-color: rgba(0,0,0,0);
+}
+.glyphicon-pencil {
+  color: orange;
+  background-color: rgba(0,0,0,0);
+}
+.glyphicon-trash {
+  color: red;
+  background-color: rgba(0,0,0,0);
+}

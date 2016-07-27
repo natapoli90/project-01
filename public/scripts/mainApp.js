@@ -30,7 +30,11 @@ $('h1.start').hide();
         $('.jumbotron').hide();
         $('.foodDB').show();
 });
+// $('#food').on('click', '.imgFood', onClickFood); 
+
+
 });
+
 function startOver (e) {
   $('#activities').html("");
   $('.foodDB').show();
@@ -38,7 +42,9 @@ function startOver (e) {
   $('.start-over').hide();
 }
 
+
 function onClickFood (calories) {
+  console.log("sanity check");
   $('.foodDB').hide();
   $('.activityDB').show();
   $('.start-over').show();
