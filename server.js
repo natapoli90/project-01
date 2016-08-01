@@ -26,6 +26,7 @@ var controllers = require('./controllers');
  * HTML Endpoints
  */
 
+// It would be a really cool extra-stretch goal to implement user auth and lock this route down for people who do not have admin login information
 app.get('/admin', function homepage (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
@@ -37,6 +38,7 @@ app.get('/', function homepage (req, res) {
  * JSON API Endpoints
  */
 
+// Great restful routing and nice tidy code!
 app.get('/api', controllers.api.index);
 
 app.get('/api/foods', controllers.foods.index);

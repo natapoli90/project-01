@@ -1,15 +1,16 @@
+/*Watch your indentation and spacing*/
+
 body {
    background-image: url("/images/stars.gif");
-
 }
 
 .jumbotron {
   background-image: url(/images/main.jpg);
+  /*This background size attr is overwritten by the one below*/
   background-size: cover;
   background-repeat: no-repeat;
   width:100%;
   height: 610px;
-
   margin: 0 auto;
   -webkit-background-size: 100% 100%;
    -moz-background-size: 100% 100%;
@@ -29,19 +30,23 @@ body {
   height: 100px;
   margin: 0 auto;
 }
+
 #foods, #activities {
     border-radius: 25px;
     border: 1px solid black;
     margin: 20px;
 }
+
 .card {
   padding: 5px 15px;
   display: block;
   margin: auto;
 }
+
 .foodDB, .activityDB, .lead, .hi, .start-over, .name, .train {
   text-align: center;
 }
+
 .container, .train {
   font-family: Rancho;
   font-size: 100px;
@@ -54,18 +59,19 @@ body {
   cursor: hand;
 }
 
-.grow:hover
-{
-        -webkit-transform: scale(1.3);
-        -ms-transform: scale(1.3);
-        transform: scale(1.3);
+.grow:hover {
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
 }
+
 .gain {
   font-family: Rancho;
   font-size: 60px;
   margin: 40px 0;
   text-align: center;
 }
+
 div.start {
   margin-top: 30px;
 }

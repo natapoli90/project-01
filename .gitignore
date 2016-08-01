@@ -1,1 +1,4 @@
 node_modules
+
+# Bower components should be added to .gitignore:
+bower_components

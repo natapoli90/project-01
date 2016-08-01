@@ -5,15 +5,16 @@
 
 $(document).ready(function() {
 
-
-
   console.log('app.js loaded!');
   var foodHtml = $('#foods-template').html();
   foodsTemplate = Handlebars.compile(foodHtml);
+
   var activityHtml = $('#activities-template').html();
   activitiesTemplate = Handlebars.compile(activityHtml);
 
   $.get('/api/foods').success(function (foods) {
+    // What happens if an error occurs in your GET request?
+    // You should include an onError callback too
     foods.forEach(function(food) {
       renderFood(food);
     });
@@ -27,8 +28,10 @@ $(document).ready(function() {
   $('#food-form form').on('submit', function(e) {
     e.preventDefault();
     var formData = $(this).serialize();
+    // Remove console logs from 'production' code
     console.log('formData', formData);
     $.post('/api/foods', formData, function(food) {
+      // What if an error occurs?
       console.log('food after POST', food);
       renderFood(food);  //render the server's response
     });
@@ -59,6 +62,7 @@ $('#activities').on('click', '.save-activity', handleActivitySaveChangesClick);
 
 // this function takes a single food and renders it to the page
 function renderFood(food) {
+  // Awesome! Just remove the console.logs
   console.log('rendering food', food);
   var html = foodsTemplate(food);
   $('#foods').prepend(html);
@@ -71,12 +75,14 @@ function renderActivity(activity) {
 // when a food delete button is clicked
 function handleDeleteFoodClick(e) {
   console.log("DELETE CALLED");
+  // This is awesome! Nice way of grabbing the id
   var foodId = $(this).parents('.card-deck').data('foodId');
   console.log('someone wants to delete food id=' + foodId );
   $.ajax({
     method: 'DELETE',
     url: '/api/foods/' + foodId,
     success: handleDeleteFoodSuccess
+    // Again, what about handling errors?
   });
 }
 
@@ -123,6 +129,7 @@ function handleFoodEditClick(e) {
 
 
   var foodName = $foodRow.find('h4.food-name').text();
+  // Nice- it's a great touch to pre-fill the input for the user
   $foodRow.find('h4.food-name').html('<input class="edit-food-name" value="' + foodName + '"></input>');
 
 
@@ -146,17 +153,15 @@ function handleFoodSaveChangesClick(e) {
     url: '/api/foods/' + foodId,
     data: data,
     success: handleFoodUpdatedResponse
+    // Missing the error callback
   });
+
   function handleFoodUpdatedResponse(data) {
     console.log('response to update', data);
-
     var foodId = data._id;
-
     $('[data-food-id=' + foodId + ']').remove();
-
     renderFood(data);
-
-
+    // Very nice touch
     $('[data-food-id=' + foodId + ']')[0].scrollIntoView();
   }
 }

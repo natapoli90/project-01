@@ -18,28 +18,32 @@
     <!-- APPLICATION SCRIPTS -->
     <script src="/scripts/mainApp.js"></script>
   </head>
+  <!-- Careful with indentation -->
   <body>
     <!-- jumbotron -->
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
          <h0 class="name font-effect-fire-animation text-center">TRAIN or GAIN</h0>
          <h2 class="hi font-effect-fire-animation">PLEASE MAKE SURE YOUR SOUND IS ON!</h2>
-      <div class="start font-effect-fire-animation">
-        <h1 class="ok grow" onclick="playSound1()">OK</h1>
-        <h1 class="start start-button grow" onclick="playSound2()" >START</h1>
+        <div class="start font-effect-fire-animation">
+          <!-- Better to use jQuery listeners to call functions -->
+          <!-- These h1s should have class-based event listeners in your JS file instead of using onclick -->
+          <h1 class="ok grow" onclick="playSound1()">OK</h1>
+          <h1 class="start start-button grow" onclick="playSound2()" >START</h1>
+        </div>
       </div>
     </div>
-</div>
 
-  <audio class="hidden" id="audio1" controls preload="none">
-      <source src="/audio/welcome1.mp3" type="audio/mpeg">
-  </audio>
-  <audio class="hidden" id="audio2" controls preload="none">
-      <source src="/audio/welcome2.mp3" type="audio/mpeg">
-  </audio>
+    <audio class="hidden" id="audio1" controls preload="none">
+        <source src="/audio/welcome1.mp3" type="audio/mpeg">
+    </audio>
+    <audio class="hidden" id="audio2" controls preload="none">
+        <source src="/audio/welcome2.mp3" type="audio/mpeg">
+    </audio>
 
 <h1 class="name weight train font-effect-fire-animation">TRAIN or GAIN</h1>
 <div class="weight col-xs-12 col-sm-offset-4">
+  <!-- Remove empty class -->
   <div class="">
     <label class="col-xs-1 control-label font-effect-fire-animation" for="met">Weight:</label>
     <div class="col-xs-2">
@@ -56,6 +60,7 @@
           <div class="card-deck" data-food-id='{{_id}}'>
             <div class="card col-md-3 col-sm-6 col-xs-12">
               <div class="card-block">
+                <!-- This use of onClick is ok for now since you're passing something into it with the HB template -->
                 <div class="card clickFood" onclick="onClickFood({{calories}})">
                   <img class="card-img-top imgFood img-responsive img-circle grow" src="{{image}}" alt="Card image cap">
                   <div class="card-block">
@@ -95,6 +100,7 @@
       </div>
     </div>
     <div class="start-over font-effect-fire-animation">
+      <!-- This onclick should be replaced with jQuery -->
       <h1 class="start" onclick="startOver()" >START OVER</h1>
     </div>
   </body>

@@ -1,7 +1,7 @@
 {
   "name": "trainorgain",
   "version": "1.0.0",
-  "description": "An app that gives you ingo about how much time you need to exercise after you ate junk food",
+  "description": "An app that gives you info about how much time you need to exercise after you ate junk food",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

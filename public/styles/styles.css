@@ -1,8 +1,12 @@
+/*Styles should be organized from most general to most specific*/
+/*i.e. elements, then classes, then IDs (if any- best not to have these)*/
+/*Watch indentation and spacing*/
+
 .jumbotron {
+  /*remove commented-out code*/
   /*background-image: url(/images/    .jpg);*/
   background-size: cover;
   background-repeat: no-repeat;
-
 }
 .jumbotron .container {
   height: 100px;
@@ -19,28 +23,37 @@
   width: 100px;
   height: 100px;
 }
+
 #foods, #activities {
     border-radius: 25px;
     border: 1px solid black;
     margin: 20px;
 }
+
 .card {
   padding: 5px 15px;
   display: block;
   margin: auto;
 }
+
 .foodDB, .activityDB, .display-3, .lead, legend {
   text-align: center;
 }
+
 .glyphicon-plus, .glyphicon-ok {
   color: green;
   background-color: rgba(0,0,0,0);
 }
+
 .glyphicon-pencil {
   color: orange;
   background-color: rgba(0,0,0,0);
 }
+
 .glyphicon-trash {
   color: red;
   background-color: rgba(0,0,0,0);
 }
+
+/* Could you abstract the background color out into a class for all .glyphicon elements? */
+/*That would make your css a bit more dry*/

@@ -5,6 +5,7 @@ var FoodSchema = new Schema({
   name: String,
   calories: Number,
   image: String,
+  // Was the description field ever used? If not, remove it.
   description: String
 });
 
