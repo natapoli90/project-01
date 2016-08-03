@@ -14,7 +14,7 @@ $(document).ready(function() {
 
   $.get('/api/foods').success(function (foods) {
     // What happens if an error occurs in your GET request?
-    // You should include an onError callback too
+    // TODO: You should include an onError callback too
     foods.forEach(function(food) {
       renderFood(food);
     });
@@ -28,10 +28,10 @@ $(document).ready(function() {
   $('#food-form form').on('submit', function(e) {
     e.preventDefault();
     var formData = $(this).serialize();
-    // Remove console logs from 'production' code
+    // TODO: Remove console logs from 'production' code
     console.log('formData', formData);
     $.post('/api/foods', formData, function(food) {
-      // What if an error occurs?
+      // TODO: What if an error occurs?
       console.log('food after POST', food);
       renderFood(food);  //render the server's response
     });
@@ -49,6 +49,7 @@ $(document).ready(function() {
     $(this).trigger("reset");
   });
 
+// TODO: The code for deleting/editing food and activities is very similar. When you start to refactor, maybe this could be made more DRY
 $('#foods').on('click', '.delete-food', handleDeleteFoodClick);
 $('#activities').on('click', '.delete-activity', handleDeleteActivityClick);
 
@@ -62,7 +63,7 @@ $('#activities').on('click', '.save-activity', handleActivitySaveChangesClick);
 
 // this function takes a single food and renders it to the page
 function renderFood(food) {
-  // Awesome! Just remove the console.logs
+  // TODO: Awesome! Just remove the console.logs
   console.log('rendering food', food);
   var html = foodsTemplate(food);
   $('#foods').prepend(html);
@@ -82,7 +83,7 @@ function handleDeleteFoodClick(e) {
     method: 'DELETE',
     url: '/api/foods/' + foodId,
     success: handleDeleteFoodSuccess
-    // Again, what about handling errors?
+    // TODO: Again, what about handling errors?
   });
 }
 
@@ -153,7 +154,7 @@ function handleFoodSaveChangesClick(e) {
     url: '/api/foods/' + foodId,
     data: data,
     success: handleFoodUpdatedResponse
-    // Missing the error callback
+    // TODO: Missing the error callback
   });
 
   function handleFoodUpdatedResponse(data) {

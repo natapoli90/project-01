@@ -1,4 +1,4 @@
-/*Watch your indentation and spacing*/
+/*TODO: Watch your indentation and spacing*/
 
 body {
    background-image: url("/images/stars.gif");
@@ -6,7 +6,7 @@ body {
 
 .jumbotron {
   background-image: url(/images/main.jpg);
-  /*This background size attr is overwritten by the one below*/
+  /*TODO: This background size attr is overwritten by the one below*/
   background-size: cover;
   background-repeat: no-repeat;
   width:100%;

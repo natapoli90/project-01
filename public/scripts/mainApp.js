@@ -5,7 +5,7 @@ var activitiesTemplate;
 var weight;
 var food;
 
-// Please watch your indentation- it's very important to write well-indented, clean looking code
+// TODO: Please watch your indentation- it's very important to write well-indented, clean looking code
 
 $(document).ready(function() {
   console.log('app.js loaded!');
@@ -23,7 +23,7 @@ $(document).ready(function() {
   activitiesTemplate = Handlebars.compile(activityHtml);
 
   $.get('/api/foods').success(function (foods) {
-    // Missing  error handling
+    // TODO: Missing  error handling
     foods.forEach(function(food) {
       renderFood(food);
     });
@@ -35,6 +35,7 @@ $(document).ready(function() {
     $('.jumbotron').hide();
     $('.foodDB').show();
   });
+  // TODO: Remove commented-out code
 // $('#food').on('click', '.imgFood', onClickFood);
 
 
@@ -49,7 +50,7 @@ function startOver (e) {
 
 
 function onClickFood (calories) {
-  // Remember to remove your sanity checks before submitting code
+  //TODO:  Remember to remove your sanity checks before submitting code
   console.log("sanity check");
   $('.foodDB').hide();
   $('.activityDB').show();

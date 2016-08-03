@@ -3,7 +3,7 @@
  ************/
 var db = require('../models');
 
-// GET /api/albums --> Tunely code?
+// GET /api/albums --> TODO: Tunely code? Remove any comments that don't add explanation or clarity to your code
 function index(req, res) {
   db.Activity.find({}, function(err, allActivities) {
     // This controller action needs error handling
@@ -12,7 +12,7 @@ function index(req, res) {
 }
 
 function create(req, res) {
-  // Remove sanity check console logs from 'production' (or submitted) code
+  // TODO: Remove sanity check console logs from 'production' (or submitted) code
   console.log('body', req.body);
   db.Activity.create(req.body, function(err, activity) {
     // These kinds of console logs are great, since they indicate errors. Keep these!
@@ -32,16 +32,16 @@ function show(req, res) {
 
 function destroy(req, res) {
   db.Activity.findOneAndRemove({_id: req.params.activityId}, function(err, foundActivity){
-    // Remove console logs from 'production' (or submitted) code
+    // TODO: Remove console logs from 'production' (or submitted) code
     console.log("DESTROYED Activity SUCCESS: " , foundActivity);
     res.json(foundActivity);
   });
 }
 
 function update(req, res) {
-  // Remove console logs from 'production' (or submitted) code
+  // TODO: Remove console logs from 'production' (or submitted) code
   console.log('updating with data', req.body);
-  // Watch your indentation!
+  // TODO: Watch your indentation!
   db.Activity.findById(req.params.activityId, function(err, foundActivity) {
     if(err) { console.log('activitiesController.update error', err); }
     foundActivity.name = req.body.name;
@@ -49,7 +49,8 @@ function update(req, res) {
     // foundActivity.image = req.body.image;
     foundActivity.save(function(err, activity) {
       if(err) { console.log('saving altered activity failed'); }
-      // You should send the newly saved activity
+      // TODO: You should send the newly saved activity instead of foundActivity
+      // activity will have an updated _v, which is the version number
       // res.json(activity)
       res.json(foundActivity);
     });
