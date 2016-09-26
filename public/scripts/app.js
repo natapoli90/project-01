@@ -4,9 +4,6 @@
   var activitiesTemplate;
 
 $(document).ready(function() {
-
-
-
   console.log('app.js loaded!');
   var foodHtml = $('#foods-template').html();
   foodsTemplate = Handlebars.compile(foodHtml);
@@ -18,6 +15,7 @@ $(document).ready(function() {
       renderFood(food);
     });
   });
+
   $.get('/api/activities').success(function (activities) {
     activities.forEach(function(activity) {
       renderActivity(activity);
@@ -56,7 +54,6 @@ $('#activities').on('click', '.edit-activity', handleActivityEditClick);
 $('#activities').on('click', '.save-activity', handleActivitySaveChangesClick);
 });
 
-
 // this function takes a single food and renders it to the page
 function renderFood(food) {
   console.log('rendering food', food);
@@ -68,6 +65,7 @@ function renderActivity(activity) {
   var html = activitiesTemplate(activity);
   $('#activities').prepend(html);
 }
+
 // when a food delete button is clicked
 function handleDeleteFoodClick(e) {
   console.log("DELETE CALLED");
@@ -121,14 +119,11 @@ function handleFoodEditClick(e) {
   // hide the edit button
   $foodRow.find('.edit-food').toggleClass('hidden');
 
-
   var foodName = $foodRow.find('h4.food-name').text();
   $foodRow.find('h4.food-name').html('<input class="edit-food-name" value="' + foodName + '"></input>');
 
-
   var foodCalories = $foodRow.find('p.food-calories').text();
   $foodRow.find('p.food-calories').html('<input class="edit-food-calories" value="' + foodCalories + '"></input>');
-
 }
 
 // after editing food, when the save changes button is clicked
@@ -140,6 +135,7 @@ function handleFoodSaveChangesClick(e) {
     name: $foodRow.find('.edit-food-name').val(),
     calories: $foodRow.find('.edit-food-calories').val(),
   };
+
   console.log('PUTing data for food', foodId, 'with data', data);
   $.ajax({
     method: 'PUT',
@@ -147,16 +143,12 @@ function handleFoodSaveChangesClick(e) {
     data: data,
     success: handleFoodUpdatedResponse
   });
+
   function handleFoodUpdatedResponse(data) {
     console.log('response to update', data);
-
     var foodId = data._id;
-
     $('[data-food-id=' + foodId + ']').remove();
-
     renderFood(data);
-
-
     $('[data-food-id=' + foodId + ']')[0].scrollIntoView();
   }
 }
@@ -172,7 +164,6 @@ function handleActivityEditClick(e) {
   $activityRow.find('.save-activity').toggleClass('hidden');
   // hide the edit button
   $activityRow.find('.edit-activity').toggleClass('hidden');
-
 
   var activityName = $activityRow.find('h4.activity-name').text();
   $activityRow.find('h4.activity-name').html('<input class="edit-activity-name" value="' + activityName + '"></input>');
@@ -192,6 +183,7 @@ function handleActivitySaveChangesClick(e) {
     name: $activityRow.find('.edit-activity-name').val(),
     met: $activityRow.find('.edit-activity-met').val(),
   };
+
   console.log('PUTing data for activity', activityId, 'with data', data);
   $.ajax({
     method: 'PUT',
@@ -199,6 +191,7 @@ function handleActivitySaveChangesClick(e) {
     data: data,
     success: handleActivityUpdatedResponse
   });
+  
   function handleActivityUpdatedResponse(data) {
     console.log('response to update', data);
     var activityId = data._id;

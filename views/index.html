@@ -3,101 +3,92 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Train or Gain</title>
-
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="/styles/styles.css">
-
     <!-- VENDOR SCRIPTS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
-
     <!-- APPLICATION SCRIPTS -->
     <script src="/scripts/app.js"></script>
   </head>
   <body>
-
     <h1 class="name weight train">TRAIN OR GAIN</h1>
     <h4 class="name weight train action">Admin Page</h4>
-
     <div class="container">
-          <div class="row col-xs-12 col-sm-6">
-          <!-- food form -->
-          <div id='food-form'>
-            <form class="form-horizontal">
-              <fieldset>
-                <legend>New food entry</legend>
-                <div class="form-group">
-                  <label class="col-md-4 control-label" for="name">Food Name</label>
-                  <div class="col-md-4">
+      <div class="row col-xs-12 col-sm-6">
+        <!-- food form -->
+        <div id='food-form'>
+          <form class="form-horizontal">
+            <fieldset>
+              <legend>New food entry</legend>
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="name">Food Name</label>
+                <div class="col-md-4">
                   <input id="name" required name="name" type="text" placeholder="" class="form-control input-md" required="">
-                  </div>
                 </div>
-                <div class="form-group">
-                  <label class="col-md-4 control-label" for="calories">Calories</label>
-                  <div class="col-md-4">
+              </div>
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="calories">Calories</label>
+                <div class="col-md-4">
                   <input id="calories" required name="calories" type="number" placeholder="" class="form-control input-md">
-                  </div>
                 </div>
-                <div class="form-group">
-                  <label class="col-md-4 control-label" for="image">Image</label>
-                  <div class="col-md-4">
+              </div>
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="image">Image</label>
+                <div class="col-md-4">
                   <input id="image" required name="image" type="url" placeholder="" class="form-control input-md">
-                  </div>
                 </div>
-                <!-- Button -->
-                <div class="form-group">
-                  <label class="col-md-4 control-label" for="singlebutton"></label>
-                  <div class="col-md-4">
-                    <button class="add-activity save btn" name="singlebutton">Save</button>
-                  </div>
+              </div>
+              <!-- Button -->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="singlebutton"></label>
+                <div class="col-md-4">
+                  <button class="add-activity save btn" name="singlebutton">Save</button>
                 </div>
-              </fieldset>
-            </form>
-          </div>
-          </div>
-          <div class="row col-xs-12 col-sm-6">
-                <!-- activities form -->
-                <div id='activity-form'>
-                  <form class="form-horizontal">
-                    <fieldset>
-                      <legend>New activity entry</legend>
-                      <div class="form-group">
-                        <label class="col-md-4 control-label" for="name">Activity Name</label>
-                        <div class="col-md-4">
-                        <input id="name" required name="name" type="text" placeholder="" class="form-control input-md" required="">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-md-4 control-label" for="met">MET</label>
-                        <div class="col-md-4">
-                        <input id="met" required name="met" type="number" placeholder="" class="form-control input-md">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-md-4 control-label" for="image">Image</label>
-                        <div class="col-md-4">
-                        <input id="image" required name="image" type="url" placeholder="" class="form-control input-md">
-                        </div>
-                      </div>
-                      <!-- Button -->
-                      <div class="form-group">
-                        <label class="col-md-4 control-label" for="singlebutton"></label>
-                        <div class="col-md-4">
-                          <button class="add-activity save btn" name="singlebutton">Save</button>
-                        </div>
-                      </div>
-                    </fieldset>
-                  </form>
-                </div>
-                </div>
+              </div>
+            </fieldset>
+          </form>
         </div>
-      <hr>
-
-
-
+      </div>
+      <div class="row col-xs-12 col-sm-6">
+        <!-- activities form -->
+        <div id='activity-form'>
+          <form class="form-horizontal">
+            <fieldset>
+              <legend>New activity entry</legend>
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="name">Activity Name</label>
+                <div class="col-md-4">
+                  <input id="name" required name="name" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="met">MET</label>
+                <div class="col-md-4">
+                  <input id="met" required name="met" type="number" placeholder="" class="form-control input-md">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="image">Image</label>
+                <div class="col-md-4">
+                  <input id="image" required name="image" type="url" placeholder="" class="form-control input-md">
+                </div>
+              </div>
+              <!-- Button -->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="singlebutton"></label>
+                <div class="col-md-4">
+                  <button class="add-activity save btn" name="singlebutton">Save</button>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+    
     <!-- card deck for food -->
     <div class="foodDB col-xs-12">
       <h2>FOOD</h2>

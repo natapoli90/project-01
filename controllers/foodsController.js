@@ -13,14 +13,18 @@ function index(req, res) {
 function create(req, res) {
   console.log('body', req.body);
   db.Food.create(req.body, function(err, food) {
-    if (err) { console.log('error', err); }
+    if (err) {
+      console.log('error', err);
+    }
     console.log(food);
     res.json(food);
   });
 }
 function show(req, res) {
   db.Food.findById(req.params.foodId, function(err, foundFood) {
-    if(err) { console.log('foodsController.show error', err); }
+    if(err) {
+      console.log('foodsController.show error', err);
+    }
     console.log('foodsController.show responding with', foundFood);
     res.json(foundFood);
   });
@@ -28,7 +32,6 @@ function show(req, res) {
 
 function destroy(req, res) {
   db.Food.findOneAndRemove({_id: req.params.foodId}, function(err, foundFood){
-
     console.log("DESTROYED Food SUCCESS: " , foundFood);
     res.json(foundFood);
   });
@@ -36,20 +39,21 @@ function destroy(req, res) {
 
 function update(req, res) {
   console.log('updating with data', req.body);
-db.Food.findById(req.params.foodId, function(err, foundFood) {
-  if(err) { console.log('foodsController.update error', err); }
-  foundFood.name = req.body.name;
-  foundFood.calories = req.body.calories;
-  // foundFood.image = req.body.image;
-  foundFood.save(function(err, food) {
-    if(err) { console.log('saving altered food failed'); }
-    res.json(foundFood);
+  db.Food.findById(req.params.foodId, function(err, foundFood) {
+    if(err) {
+      console.log('foodsController.update error', err);
+    }
+    foundFood.name = req.body.name;
+    foundFood.calories = req.body.calories;
+    foundFood.save(function(err, food) {
+      if(err) {
+        console.log('saving altered food failed');
+      }
+      res.json(foundFood);
+    });
   });
-});
 }
 
-
-// export public methods here
 module.exports = {
   index: index,
   create: create,

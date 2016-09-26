@@ -1,11 +1,10 @@
 body {
-   background-color: #e6e6e6;
-   font-family: 'Stellar';
+  background-color: #e6e6e6;
+  font-family: 'Stellar';
 }
 
-
 .hidden {
-   display: none;
+  display: none;
  }
 
 .img-responsive {
@@ -15,27 +14,33 @@ body {
   width: 100px;
   height: 100px;
 }
+
 #foods, #activities {
-    border-radius: 25px;
-    border: 1px solid black;
-    margin: 20px;
+  border-radius: 25px;
+  border: 1px solid black;
+  margin: 20px;
 }
+
 .card {
   padding: 5px 15px;
   display: inline-block;
   margin: 0 auto;
 }
+
 .name, .foodDB, .activityDB, .display-3, .lead, legend {
   text-align: center;
 }
+
 .glyphicon-ok {
   color: black;
   background-color: #66cc66;
 }
+
 .glyphicon-pencil {
   color: black;
   background-color: #ffb366;
 }
+
 .glyphicon-trash {
   color: black;
   background-color: #ff3300;

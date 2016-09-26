@@ -6,11 +6,10 @@
   var food;
 
 $(document).ready(function() {
-
-$('.weight').hide();
-$('.foodDB').hide();
-$('.activityDB').hide();
-$('.start-over').hide();
+  $('.weight').hide();
+  $('.foodDB').hide();
+  $('.activityDB').hide();
+  $('.start-over').hide();
 
   console.log('app.js loaded!');
   var foodHtml = $('#foods-template').html();
@@ -25,13 +24,10 @@ $('.start-over').hide();
   });
 
   $('.start-button').on('click', function(e) {
-        $('.weight').show();
-        $('.jumbotron').hide();
-        $('.foodDB').show();
-});
-// $('#food').on('click', '.imgFood', onClickFood);
-
-
+    $('.weight').show();
+    $('.jumbotron').hide();
+    $('.foodDB').show();
+  });
 });
 
 function startOver (e) {
@@ -40,7 +36,6 @@ function startOver (e) {
   $('.activityDB').hide();
   $('.start-over').hide();
 }
-
 
 function onClickFood (calories) {
   console.log("sanity check");
@@ -65,6 +60,7 @@ function renderFood(food) {
   var html = foodsTemplate(food);
   $('#foods').prepend(html);
 }
+
 function renderActivity(activity) {
   console.log('rendering activity', activity);
   var html = activitiesTemplate(activity);
