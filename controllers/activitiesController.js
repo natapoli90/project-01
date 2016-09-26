@@ -13,14 +13,18 @@ function index(req, res) {
 function create(req, res) {
   console.log('body', req.body);
   db.Activity.create(req.body, function(err, activity) {
-    if (err) { console.log('error', err); }
+    if (err) {
+      console.log('error', err);
+    }
     console.log(activity);
     res.json(activity);
   });
 }
 function show(req, res) {
   db.Activity.findById(req.params.activityId, function(err, foundActivity) {
-    if(err) { console.log('activitiesController.show error', err); }
+    if(err) {
+      console.log('activitiesController.show error', err);
+    }
     console.log('activitiesController.show responding with', foundActivity);
     res.json(foundActivity);
   });
@@ -28,7 +32,6 @@ function show(req, res) {
 
 function destroy(req, res) {
   db.Activity.findOneAndRemove({_id: req.params.activityId}, function(err, foundActivity){
-
     console.log("DESTROYED Activity SUCCESS: " , foundActivity);
     res.json(foundActivity);
   });
@@ -36,20 +39,21 @@ function destroy(req, res) {
 
 function update(req, res) {
   console.log('updating with data', req.body);
-db.Activity.findById(req.params.activityId, function(err, foundActivity) {
-  if(err) { console.log('activitiesController.update error', err); }
-  foundActivity.name = req.body.name;
-  foundActivity.met = req.body.met;
-  // foundActivity.image = req.body.image;
-  foundActivity.save(function(err, activity) {
-    if(err) { console.log('saving altered activity failed'); }
-    res.json(foundActivity);
+  db.Activity.findById(req.params.activityId, function(err, foundActivity) {
+    if(err) {
+      console.log('activitiesController.update error', err);
+    }
+    foundActivity.name = req.body.name;
+    foundActivity.met = req.body.met;
+    foundActivity.save(function(err, activity) {
+      if(err) {
+        console.log('saving altered activity failed');
+      }
+      res.json(foundActivity);
+    });
   });
-});
 }
 
-
-// export public methods here
 module.exports = {
   index: index,
   create: create,

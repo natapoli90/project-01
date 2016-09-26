@@ -20,7 +20,7 @@ var foodsList =[
                 "image": "/images/food/3fries.jpg"
               },
               {
-                "name": "Glazed Donut",
+                "name": "Donut, 1",
                 "calories": 420,
                 "image": "/images/food/4donut.jpg"
               },
