@@ -1,12 +1,8 @@
-.jumbotron {
-  /*background-image: url(/images/    .jpg);*/
-  background-size: cover;
-  background-repeat: no-repeat;
+body {
+   background-color: #e6e6e6;
+   font-family: 'Stellar';
+}
 
-}
-.jumbotron .container {
-  height: 100px;
-}
 
 .hidden {
    display: none;
@@ -15,7 +11,7 @@
 .img-responsive {
   max-width: 100%;
   height: auto;
-  display: block;
+  display: inline-block;
   width: 100px;
   height: 100px;
 }
@@ -26,21 +22,26 @@
 }
 .card {
   padding: 5px 15px;
-  display: block;
-  margin: auto;
+  display: inline-block;
+  margin: 0 auto;
 }
-.foodDB, .activityDB, .display-3, .lead, legend {
+.name, .foodDB, .activityDB, .display-3, .lead, legend {
   text-align: center;
 }
-.glyphicon-plus, .glyphicon-ok {
-  color: green;
-  background-color: rgba(0,0,0,0);
+.glyphicon-ok {
+  color: black;
+  background-color: #66cc66;
 }
 .glyphicon-pencil {
-  color: orange;
-  background-color: rgba(0,0,0,0);
+  color: black;
+  background-color: #ffb366;
 }
 .glyphicon-trash {
-  color: red;
-  background-color: rgba(0,0,0,0);
+  color: black;
+  background-color: #ff3300;
+}
+
+.save {
+  background-color: #66cc66;
+  margin-left: 30%;
 }

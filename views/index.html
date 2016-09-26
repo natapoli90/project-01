@@ -18,16 +18,12 @@
     <script src="/scripts/app.js"></script>
   </head>
   <body>
-    <!-- jumbotron -->
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-      <h1 class="display-3">Admin Page</h1>
-      <p class="lead">This page is made for adding, updating and deleting databases elements.</p>
-      </div>
-    </div>
+
+    <h1 class="name weight train">TRAIN OR GAIN</h1>
+    <h4 class="name weight train action">Admin Page</h4>
 
     <div class="container">
-          <div class="row col-xs-6">
+          <div class="row col-xs-12 col-sm-6">
           <!-- food form -->
           <div id='food-form'>
             <form class="form-horizontal">
@@ -53,16 +49,16 @@
                 </div>
                 <!-- Button -->
                 <div class="form-group">
-                  <label class="col-md-4 control-label" for="singlebutton">Save Entry</label>
+                  <label class="col-md-4 control-label" for="singlebutton"></label>
                   <div class="col-md-4">
-                    <button class="add-food btn glyphicon glyphicon-plus" name="singlebutton" ></button>
+                    <button class="add-activity save btn" name="singlebutton">Save</button>
                   </div>
                 </div>
               </fieldset>
             </form>
           </div>
           </div>
-            <div class="clearfix visible-xs-block"></div>
+          <div class="row col-xs-12 col-sm-6">
                 <!-- activities form -->
                 <div id='activity-form'>
                   <form class="form-horizontal">
@@ -88,13 +84,14 @@
                       </div>
                       <!-- Button -->
                       <div class="form-group">
-                        <label class="col-md-4 control-label" for="singlebutton">Save Entry</label>
+                        <label class="col-md-4 control-label" for="singlebutton"></label>
                         <div class="col-md-4">
-                          <button class="add-activity btn glyphicon glyphicon-plus" name="singlebutton"></button>
+                          <button class="add-activity save btn" name="singlebutton">Save</button>
                         </div>
                       </div>
                     </fieldset>
                   </form>
+                </div>
                 </div>
         </div>
       <hr>
@@ -102,13 +99,13 @@
 
 
     <!-- card deck for food -->
-    <div class="foodDB col-xs-6">
-      <h2>Food DB</h2>
+    <div class="foodDB col-xs-12">
+      <h2>FOOD</h2>
       <div id="foods" class="row">
         <div class="card-deck-wrapper">
           <script id="foods-template" type="text/x-handlebars-template">
           <div class="card-deck" data-food-id='{{_id}}'>
-            <div class="card col-md-3 col-sm-6 col-xs-12">
+            <div class="card col-sm-3 col-xs-6">
               <div class="card-block">
                 <div class="card">
                   <img class="card-img-top img-responsive img-circle" src="{{image}}" alt="Card image cap">
@@ -129,13 +126,13 @@
     </div>
 
     <!-- card deck for activities -->
-    <div class="activityDB col-xs-6">
-      <h2>Activities DB</h2>
+    <div class="activityDB col-xs-12">
+      <h2>ACTIVITIES</h2>
       <div id="activities" class="row">
         <div class="card-deck-wrapper">
           <script id="activities-template" type="text/x-handlebars-template">
           <div class="card-deck" data-activity-id='{{_id}}'>
-            <div class="card col-md-3 col-sm-6 col-xs-12">
+            <div class="card col-sm-3 col-xs-6">
               <div class="card-block">
                 <div class="card ">
                   <img class="card-img-top img-responsive img-circle" src="{{image}}" alt="Card image cap">

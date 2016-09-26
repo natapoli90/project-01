@@ -11,7 +11,6 @@ $('.weight').hide();
 $('.foodDB').hide();
 $('.activityDB').hide();
 $('.start-over').hide();
-$('h1.start').hide();
 
   console.log('app.js loaded!');
   var foodHtml = $('#foods-template').html();
@@ -30,7 +29,7 @@ $('h1.start').hide();
         $('.jumbotron').hide();
         $('.foodDB').show();
 });
-// $('#food').on('click', '.imgFood', onClickFood); 
+// $('#food').on('click', '.imgFood', onClickFood);
 
 
 });
@@ -46,6 +45,7 @@ function startOver (e) {
 function onClickFood (calories) {
   console.log("sanity check");
   $('.foodDB').hide();
+  $('.action').hide();
   $('.activityDB').show();
   $('.start-over').show();
   weight = $('#weight').val();
@@ -58,15 +58,6 @@ function onClickFood (calories) {
     });
   });
 }
-
-function playSound1 () {
-    document.getElementById('audio1').play();
-  $('h1.ok').hide();
-  $('h1.start').show();
-}
-function playSound2 () {
-    document.getElementById('audio2').play();
-  }
 
 // this function takes a single food and renders it to the page
 function renderFood(food) {
