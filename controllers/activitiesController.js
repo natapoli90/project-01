@@ -3,20 +3,20 @@
  ************/
 var db = require('../models');
 
-// GET /api/albums
 function index(req, res) {
   db.Activity.find({}, function(err, allActivities) {
+    if (err) {
+      console.log('error', err);
+    }
     res.json(allActivities);
   });
 }
 
 function create(req, res) {
-  console.log('body', req.body);
   db.Activity.create(req.body, function(err, activity) {
     if (err) {
       console.log('error', err);
     }
-    console.log(activity);
     res.json(activity);
   });
 }
@@ -25,20 +25,17 @@ function show(req, res) {
     if(err) {
       console.log('activitiesController.show error', err);
     }
-    console.log('activitiesController.show responding with', foundActivity);
     res.json(foundActivity);
   });
 }
 
 function destroy(req, res) {
   db.Activity.findOneAndRemove({_id: req.params.activityId}, function(err, foundActivity){
-    console.log("DESTROYED Activity SUCCESS: " , foundActivity);
     res.json(foundActivity);
   });
 }
 
 function update(req, res) {
-  console.log('updating with data', req.body);
   db.Activity.findById(req.params.activityId, function(err, foundActivity) {
     if(err) {
       console.log('activitiesController.update error', err);
@@ -49,7 +46,7 @@ function update(req, res) {
       if(err) {
         console.log('saving altered activity failed');
       }
-      res.json(foundActivity);
+      res.json(activity);
     });
   });
 }

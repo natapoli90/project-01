@@ -4,7 +4,6 @@
 var express = require('express');
 // generate a new express app and call it 'app'
 var app = express();
-// var mongoose = require('mongoose');
 // parse incoming urlencoded form data
 // and populate the req.body object
 var bodyParser = require('body-parser');
@@ -16,7 +15,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/vendor', express.static(__dirname + '/bower_components'));
 
 var controllers = require('./controllers');
-
 
 /**********
  * ROUTES *
@@ -53,6 +51,7 @@ app.delete('/api/activities/:activityId', controllers.activities.destroy);
 
 app.put('/api/foods/:foodId', controllers.foods.update);
 app.put('/api/activities/:activityId', controllers.activities.update);
+
 /**********
  * SERVER *
  **********/

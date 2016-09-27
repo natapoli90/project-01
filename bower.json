@@ -1,9 +1,9 @@
 {
-  "name": "tunely",
+  "name": "Train or Gain",
   "version": "0.0.0",
-  "homepage": "https://github.com/tgaff/tunely",
+  "homepage": "https://github.com/natapoli90/project-01",
   "authors": [
-    "tgaff <tgaff@alumni.nd.edu>"
+    "natapoli90"
   ],
   "license": "MIT",
   "ignore": [

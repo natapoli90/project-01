@@ -1,9 +1,9 @@
 /* CLIENT-SIDE JS
 */
-  var foodsTemplate;
-  var activitiesTemplate;
-  var weight;
-  var food;
+var foodsTemplate;
+var activitiesTemplate;
+var weight;
+var food;
 
 $(document).ready(function() {
   $('.weight').hide();
@@ -11,16 +11,17 @@ $(document).ready(function() {
   $('.activityDB').hide();
   $('.start-over').hide();
 
-  console.log('app.js loaded!');
   var foodHtml = $('#foods-template').html();
   foodsTemplate = Handlebars.compile(foodHtml);
+
   var activityHtml = $('#activities-template').html();
   activitiesTemplate = Handlebars.compile(activityHtml);
 
-  $.get('/api/foods').success(function (foods) {
-    foods.forEach(function(food) {
-      renderFood(food);
-    });
+  $.ajax({
+    method: 'GET',
+    url: '/api/foods',
+    success: handleFoodSuccess,
+    error: handleError,
   });
 
   $('.start-button').on('click', function(e) {
@@ -30,6 +31,12 @@ $(document).ready(function() {
   });
 });
 
+function handleFoodSuccess(foods) {
+  foods.forEach(function(food) {
+    renderFood(food);
+  });
+}
+
 function startOver (e) {
   $('#activities').html("");
   $('.foodDB').show();
@@ -38,7 +45,6 @@ function startOver (e) {
 }
 
 function onClickFood (calories) {
-  console.log("sanity check");
   $('.foodDB').hide();
   $('.action').hide();
   $('.activityDB').show();
@@ -56,14 +62,15 @@ function onClickFood (calories) {
 
 // this function takes a single food and renders it to the page
 function renderFood(food) {
-  console.log('rendering food', food);
   var html = foodsTemplate(food);
   $('#foods').prepend(html);
 }
 
 function renderActivity(activity) {
-  console.log('rendering activity', activity);
   var html = activitiesTemplate(activity);
-  console.log("Activity html: ", html);
   $('#activities').prepend(html);
+}
+
+function handleError(err) {
+  console.log("Server returned an error.", err);
 }
