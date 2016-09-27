@@ -4,8 +4,7 @@ var Schema = mongoose.Schema;
 var FoodSchema = new Schema({
   name: String,
   calories: Number,
-  image: String,
-  description: String
+  image: String
 });
 
 var Food = mongoose.model('Food', FoodSchema);

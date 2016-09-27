@@ -13,7 +13,6 @@ body {
   -webkit-background-size: 100% 100%;
    -moz-background-size: 100% 100%;
    -o-background-size: 100% 100%;
-   background-size: 100% 100%;
 }
 
 .hidden {
@@ -53,15 +52,16 @@ body {
 }
 
 .grow:hover
-{
   -webkit-transform: scale(1.3);
   -ms-transform: scale(1.3);
   transform: scale(1.3);
 }
+
 .gain {
   font-size: 40px;
   text-align: center;
 }
+
 div.start {
   margin-top: 30px;
 }
