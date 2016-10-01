@@ -1,7 +1,7 @@
 /* CLIENT-SIDE JS
 */
-  var foodsTemplate;
-  var activitiesTemplate;
+var foodsTemplate;
+var activitiesTemplate;
 
 $(document).ready(function() {
   var foodHtml = $('#foods-template').html();
